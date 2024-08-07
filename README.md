@@ -1,6 +1,6 @@
 # guia para levar meu vim para todo lugar
 
-## arquivos no diretorios
+## arquivos no diretorio
 fonte tema vimrc
 
 ## estrutura de diretorios
