@@ -1,0 +1,115 @@
+function! <SID>StdHeader()
+    execute "normal! i/* ************************************************************************** */"
+    execute "normal! o/*                                                                            */"
+    execute "normal! o/*                                                        :::      ::::::::   */"
+    execute "normal! o/*   ft_forty-two.c                                     :+:      :+:    :+:   */"
+    execute "normal! o/*                                                    +:+ +:+         +:+     */"
+    execute "normal! o/*   By: jota-kdt <jota-kdt@student.42.fr>          +#+  +:+       +#+        */"
+    execute "normal! o/*                                                +#+#+#+#+#+   +#+           */"
+    execute "normal! o/*   Created: 8888/88/88 88:88:88 by jota-kdt          #+#    #+#             */"
+    execute "normal! o/*   Updated: 8888/88/88 88:88:88 by jota-kdt         ###   ########.SP       */"
+    execute "normal! o/*                                                                            */"
+    execute "normal! o/* ************************************************************************** */\n\n"
+endfunction
+
+" Mapeamento para adicionar um cabeçalho padrão ao pressionar F1
+map <silent> <F1> :call <SID>StdHeader()<CR>
+
+" ativar sintaxe colorida
+syntax on
+
+" ativar indentação automática
+set autoindent
+
+" ativa indentação inteligente, o Vim tentará adivinhar
+" qual é a melhor indentação para o código quando você
+" efetuar quebra de linha. Funciona bem para linguagem C
+set smartindent
+
+" por padrão o vim armazena os últimos 50 comandos que você
+" digitou em seu histórico. Eu sou exagerado, prefiro armazenar
+" os últimos 500
+set history=500
+
+" ativar numeração de linha
+set number
+
+" procura com highlight
+set incsearch
+
+" destaca a linha em que o cursor está posicionado
+" ótimo para quem não enxerga muito bem
+set cursorline
+
+" ativa o clique do mouse para navegação pelos documentos
+set mouse=a
+
+" ativa o compartilhamento de área de transferência entre o Vim
+" e a interface gráfica
+set clipboard=unnamedplus
+
+" confirma tabs como tabs de 4 espaços
+set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+
+" ao teclar a barra de espaço no modo normal, o Vim
+" irá colapsar ou expandir o bloco de código do cursor
+" foldlevel é a partir de que nível de indentação o
+" código iniciará colapsado
+set foldmethod=syntax
+set foldlevel=99
+nnoremap <space> za
+
+colo jota
+
+map <c-a> :NERDTreeToggle<cr>
+set encoding=utf8
+set guifont=ComicShannsMono\ Nerd\ Font\ Mono:h12
+
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_statusline_ontop=0
+let g:airline_theme='murmur'
+
+let g:airline#extensions#tabline#formatter = 'default'
+" navegação entre os buffers
+nnoremap <M-Right> :bn<cr>
+nnoremap <M-Left> :bp<cr>
+nnoremap <C-x> :bp\|bd #<cr>
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(swp|zip)$'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_show_hidden = 1
+
+filetype plugin on
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+map cc <Plug>NERDCommenterInvert
+
+" Ativar o ALE para linting e formatação
+let g:ale_enabled = 1
+
+" Definir os linters para C e C++
+let g:ale_linters = {'c': ['gcc'], 'cpp': ['g++']}
+let g:ale_linters.python = ['pylint']
+let g:ale_linters.sh = ['shellcheck']
+
+" Desativar correção automática
+let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 0
+let g:ale_fixers = {'c': [], 'cpp': []}
+
+" Desativar sugestões e dicas automáticas
+let g:ale_completion_enabled = 1
+
+" comandos uteis para manter sempre por perto
+" limpar todas as linhas em branco
+" :g /^$/d
+" marcar a identaçao
+" set list lcs=tab:\|.
+
+" Atalho para abrir terminal na parte inferior horizontal
+nnoremap <silent> <C-t> :botright terminal ++rows=10<CR>
+
+" autocompletar padrao do vim
+set omnifunc=syntaxcomplete#Complete
