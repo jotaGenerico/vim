@@ -1,7 +1,8 @@
-" jota.vim -- Vim color scheme.
-" Author:      jota
-" Description: hu3?
-" Last Change: 2024-08-03
+" vim-J.vim -- Vim color scheme.
+" Author:      arthurealike (thefresharthure@yahoo.com)
+" Webpage:     github.com/arthurealike/vim-J
+" Description: Why so serious?
+" Last Change: 2021-02-17
 
 hi clear
 
@@ -9,12 +10,12 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "jota"
+let colors_name = "vim-j"
 
 if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi Normal ctermbg=NONE ctermfg=15 cterm=NONE guibg=NONE guifg=#d7d4cd gui=NONE
     hi NonText ctermbg=NONE ctermfg=46 cterm=NONE guibg=NONE guifg=#58FF1E gui=NONE
-    hi Comment ctermbg=NONE ctermfg=15 cterm=NONE guibg=NONE guifg=#ffffff gui=NONE
+    hi Comment ctermbg=NONE ctermfg=65 cterm=NONE guibg=NONE guifg=#5f875f gui=NONE
     hi Constant ctermbg=NONE ctermfg=208 cterm=NONE guibg=NONE guifg=#FF8B00 gui=NONE
     hi Error ctermbg=NONE ctermfg=196 cterm=NONE guibg=NONE guifg=#ff0000 gui=NONE
     hi Identifier ctermbg=NONE ctermfg=98 cterm=NONE guibg=NONE guifg=#bd93f9 gui=NONE
@@ -33,12 +34,12 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi TabLineFill ctermbg=NONE ctermfg=15 cterm=NONE guibg=NONE guifg=#d7d4cd gui=NONE
     hi TabLineSel ctermbg=98 ctermfg=232 cterm=NONE guibg=#bd93f9 guifg=#121212 gui=NONE
     hi Title ctermbg=98 ctermfg=232 cterm=NONE guibg=#bd93f9 guifg=#121212 gui=NONE
-    hi CursorLine ctermbg=232 ctermfg=NONE cterm=NONE guibg=#444444 guifg=NONE gui=NONE
+    hi CursorLine ctermbg=246 ctermfg=NONE cterm=NONE guibg=#4e4e4e guifg=NONE gui=NONE
     hi LineNr ctermbg=NONE ctermfg=98 cterm=NONE guibg=NONE guifg=#bd93f9 gui=NONE
     hi CursorLineNr ctermbg=NONE ctermfg=46 cterm=NONE guibg=NONE guifg=#58FF1E gui=NONE
     hi helpLeadBlank ctermbg=NONE ctermfg=15 cterm=NONE guibg=NONE guifg=#d7d4cd gui=NONE
     hi helpNormal ctermbg=NONE ctermfg=46 cterm=NONE guibg=NONE guifg=#58FF1E gui=NONE
-    hi Visual ctermbg=NONE ctermfg=98 cterm=reverse guibg=NONE guifg=#bd93f9 gui=reverse
+    hi Visual ctermbg=NONE ctermfg=246 cterm=reverse guibg=NONE guifg=#4e4e4e gui=reverse
     hi VisualNOS ctermbg=NONE ctermfg=NONE cterm=underline guibg=NONE guifg=NONE gui=underline
     hi Pmenu ctermbg=NONE ctermfg=15 cterm=NONE guibg=NONE guifg=#d7d4cd gui=NONE
     hi PmenuSbar ctermbg=NONE ctermfg=15 cterm=NONE guibg=NONE guifg=#d7d4cd gui=NONE
@@ -151,4 +152,3 @@ hi link CursorIM Cursor
 hi link Terminal Normal
 
 " Generated with RNB (https://github.com/romainl/vim-rnb)
-
